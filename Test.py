@@ -12,8 +12,13 @@ CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 CHECK_SECONDS = int(os.getenv("CHECK_SECONDS", 5))
 
 # DISCORD SETUP
+import discord
+from discord.ext import commands
+
 intents = discord.Intents.default()
-intents.message_content = True
+intents.message_content = True  # ONLY if you read messages
+
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
